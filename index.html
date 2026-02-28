@@ -94,7 +94,8 @@
             <header class="flex items-center justify-between py-3 md:py-5 min-h-[80px]">
                 <div class="flex items-center flex-shrink min-w-0">
                     <a href="index.html" class="flex items-center">
-                        <img src="./logo-transparent.png" alt="ETS Monteaux Logo" class="max-h-[50px] sm:max-h-[65px] md:max-h-[85px] max-w-[180px] sm:max-w-[250px] md:max-w-none w-auto object-contain transition-transform hover:scale-105 hover-lift"
+                        <img src="./logo-transparent.png" alt="ETS Monteaux Logo"
+                            class="max-h-[50px] sm:max-h-[65px] md:max-h-[85px] max-w-[180px] sm:max-w-[250px] md:max-w-none w-auto object-contain transition-transform hover:scale-105 hover-lift"
                             onerror="this.style.display='none'">
                     </a>
                 </div>
@@ -120,18 +121,20 @@
                     </a>
                 </div>
             </header>
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed top-[70px] sm:top-[85px] md:top-[125px] left-0 right-0 bottom-0 overflow-y-auto bg-white shadow-xl z-40 hidden flex-col items-center justify-center gap-8 text-xl font-bold opacity-0 transition-opacity duration-300">
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu"
+                class="fixed inset-0 pt-28 pb-10 overflow-y-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xl z-40 flex flex-col items-center justify-center gap-8 text-xl font-bold opacity-0 -translate-y-full transition-all duration-500 pointer-events-none">
 
-                    <a class="text-accent-red dark:text-slate-200 text-2xl font-bold uppercase tracking-wider transition-colors border-b-4 border-accent-red"
-                        href="index.html">Accueil</a>
-                    <a class="text-primary dark:text-slate-200 text-2xl font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
-                        href="services.html">Services</a>
-                    <a class="text-primary dark:text-slate-200 text-2xl font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
-                        href="contact.html">Contact</a>
-                
-<a href="contact.html" class="bg-primary text-white px-8 py-4 rounded-full mt-4 hover:bg-slate-800 transition-colors">Contactez-nous</a>
-</div>
+                <a class="text-accent-red dark:text-slate-200 text-2xl font-bold uppercase tracking-wider transition-colors border-b-4 border-accent-red"
+                    href="index.html">Accueil</a>
+                <a class="text-primary dark:text-slate-200 text-2xl font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
+                    href="services.html">Services</a>
+                <a class="text-primary dark:text-slate-200 text-2xl font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
+                    href="contact.html">Contact</a>
+
+                <a href="contact.html"
+                    class="bg-primary text-white px-8 py-4 rounded-full mt-4 hover:bg-slate-800 transition-colors">Contactez-nous</a>
+            </div>
 
         </div>
     </div>
@@ -236,12 +239,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <footer
-        class="footer-dynamic relative overflow-hidden py-12 text-white mt-auto  hover-lift z-10 block">
+    <footer class="footer-dynamic relative overflow-hidden py-12 text-white mt-auto  hover-lift z-10 block">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left relative z-10">
-                
+
                 <!-- Logo & Brand -->
                 <div class="flex flex-col items-center md:items-start gap-3">
                     <img src="./logo-transparent.png" alt="ETS Monteaux Logo" class="h-[59px] w-auto object-contain"
@@ -251,7 +253,7 @@
                         © 2014 ETS Monteaux.
                     </div>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div class="flex flex-col items-center justify-center text-slate-300 space-y-3">
                     <div class="flex items-center gap-2">
@@ -260,11 +262,13 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="fa-brands fa-whatsapp text-accent-red text-lg"></span>
-                        <a href="https://wa.me/33633941881" target="_blank" class="hover:text-accent-red transition-colors">+33 6 33 94 18 81</a>
+                        <a href="https://wa.me/33633941881" target="_blank"
+                            class="hover:text-accent-red transition-colors">+33 6 33 94 18 81</a>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-accent-red text-lg">mail</span>
-                        <a href="mailto:contact@etsmonteaux.com" class="hover:text-accent-red hover:underline transition-colors break-all text-center sm:text-left">contact@etsmonteaux.com</a>
+                        <a href="mailto:contact@etsmonteaux.com"
+                            class="hover:text-accent-red hover:underline transition-colors break-all text-center sm:text-left">contact@etsmonteaux.com</a>
                     </div>
                 </div>
 
@@ -289,22 +293,15 @@
             const icon = btn.querySelector('i');
 
             btn.addEventListener('click', () => {
-                if (menu.classList.contains('hidden')) {
-                    menu.classList.remove('hidden');
-                    menu.classList.add('flex');
-                    setTimeout(() => {
-                        menu.classList.remove('opacity-0');
-                        menu.classList.add('opacity-100');
-                    }, 10);
+                const isOpen = menu.classList.contains('opacity-100');
+                if (!isOpen) {
+                    menu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+                    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-xmark');
                 } else {
-                    menu.classList.remove('opacity-100');
-                    menu.classList.add('opacity-0');
-                    setTimeout(() => {
-                        menu.classList.add('hidden');
-                        menu.classList.remove('flex');
-                    }, 300);
+                    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    menu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
                     icon.classList.remove('fa-xmark');
                     icon.classList.add('fa-bars');
                 }
