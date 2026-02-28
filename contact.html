@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contactez-nous - ETS Monteaux</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a2b4b", // Traditional Navy Blue
+                        "accent-red": "#d92b2b", // Racing Red
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body { font-family: 'Work Sans', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 43, 75, 0.8), rgba(26, 43, 75, 0.4));
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-up {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+            @keyframes animatedBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .footer-dynamic {
+            background: linear-gradient(-45deg, #1a2b4b, #223f6e, #1a2b4b, #8a1f1f);
+            background-size: 400% 400%;
+            animation: animatedBackground 12s ease infinite;
+            border-top: 4px solid var(--accent-red);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display flex flex-col min-h-screen">
+    <div
+        class="relative flex flex-col w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+            <header class="flex items-center justify-between h-20">
+                <div class="flex flex-col sm:flex-row items-center gap-3">
+                    <a href="index.html" class="flex items-center">
+                        <img src="./assets/logo-transparent.png" alt="ETS Monteaux Logo" class="h-[67px] md:h-[101px] w-auto object-contain transition-transform hover:scale-105 hover-lift"
+                            onerror="this.style.display='none'">
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center gap-6 lg:gap-10">
+                    <a class="text-primary dark:text-slate-200 text-sm font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
+                        href="index.html">Accueil</a>
+                    <a class="text-primary dark:text-slate-200 text-sm font-bold uppercase tracking-wider hover:text-accent-red transition-colors"
+                        href="services.html">Services</a>
+                    <a class="text-accent-red dark:text-slate-200 text-sm font-bold uppercase tracking-wider transition-colors border-b-2 border-accent-red"
+                        href="contact.html">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2 sm:gap-4 z-50">
+                    <button id="mobile-btn" class="md:hidden text-primary text-2xl focus:outline-none p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button class="hidden xl:flex items-center gap-2 text-primary font-bold text-sm">
+                        <span class="fa-brands fa-whatsapp text-accent-red text-xl"></span>
+                        +33 6 33 94 18 81
+                    </button>
+                    <a href="contact.html"
+                        class="bg-primary hover:bg-slate-800 text-white px-6 py-3 rounded font-bold text-sm uppercase tracking-widest transition-all shadow-md">
+                        Contactez-nous
+                    </a>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        <div class="bg-white border-b border-slate-200 py-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-black uppercase text-primary tracking-tight mb-4">Contactez-nous</h1>
+            <div class="w-16 h-1 bg-accent-red mx-auto mb-4"></div>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg">Nous sommes à votre disposition pour toute demande de
+                pièces ou de réparation.</p>
+        </div>
+
+        <section class="bg-primary py-16 text-white" id="contact">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-up">
+                    <div>
+                        <h2 class="text-3xl font-black uppercase mb-8 flex items-center gap-3">
+                            <span class="w-8 h-1 bg-accent-red"></span>
+                            Nous Trouver
+                        </h2>
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-center gap-2 sm:gap-4 z-50">
+                                <button id="mobile-btn" class="md:hidden text-primary text-2xl focus:outline-none p-2">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                                <span class="material-symbols-outlined text-accent-red text-3xl">location_on</span>
+                                <span class="text-lg">390 Rue Guy Môquet, 59120 Loos</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-4 z-50">
+                                <button id="mobile-btn" class="md:hidden text-primary text-2xl focus:outline-none p-2">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                                <span class="material-symbols-outlined text-accent-red text-3xl">schedule</span>
+                                <span class="text-lg">Lun - Sam : 08h00 - 18h00</span>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-4 z-50">
+                                <button id="mobile-btn" class="md:hidden text-primary text-2xl focus:outline-none p-2">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                                <span class="fa-brands fa-whatsapp text-accent-red text-3xl"></span>
+                                <a href="https://wa.me/33633941881" target="_blank" class="text-lg hover:underline">+33
+                                    6 33 94 18 81</a>
+                            </div>
+                            <div class="flex items-center gap-2 sm:gap-4 z-50">
+                                <button id="mobile-btn" class="md:hidden text-primary text-2xl focus:outline-none p-2">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                                <span class="material-symbols-outlined text-accent-red text-3xl">mail</span>
+                                <span class="text-lg"><a href="mailto:contact@etsmonteaux.com" class="hover:text-accent-red hover:underline transition-colors">contact@etsmonteaux.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg overflow-hidden h-96 border-4 border-white/10 bg-slate-800 shadow-2xl">
+                        <img src="./assets/contact.jpg" alt="Contact ETS Monteaux" class="w-full h-full object-cover">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/33633941881?text=Bonjour,%20je%20vous%20contacte%20depuis%20votre%20site%20internet.%20Concernant%20vos%20services..."
+        target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer
+        class="footer-dynamic relative overflow-hidden py-12 text-white mt-auto  hover-lift z-10 block">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left relative z-10">
+                
+                <!-- Logo & Brand -->
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <img src="./assets/logo-transparent.png" alt="ETS Monteaux Logo" class="h-[59px] w-auto object-contain"
+                        onerror="this.style.display='none'">
+                    <span class="font-black text-xl tracking-tight uppercase">ETS MONTEAUX</span>
+                    <div class="text-slate-400 text-sm mt-2">
+                        © 2014 ETS Monteaux.
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="flex flex-col items-center justify-center text-slate-300 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-accent-red text-lg">location_on</span>
+                        <span>390 Rue Guy Môquet, 59120 Loos</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="fa-brands fa-whatsapp text-accent-red text-lg"></span>
+                        <a href="https://wa.me/33633941881" target="_blank" class="hover:text-accent-red transition-colors">+33 6 33 94 18 81</a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-accent-red text-lg">mail</span>
+                        <a href="mailto:contact@etsmonteaux.com" class="hover:text-accent-red hover:underline transition-colors">contact@etsmonteaux.com</a>
+                    </div>
+                </div>
+
+                <!-- Quality -->
+                <div class="flex flex-col items-center md:items-end gap-2 h-full justify-center">
+                    <span class="text-xs uppercase font-bold tracking-widest text-slate-500">Qualité Garantie</span>
+                    <div class="flex gap-1">
+                        <span class="material-symbols-outlined text-accent-red text-2xl">verified</span>
+                        <span class="material-symbols-outlined text-accent-red text-2xl">shield</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    menu.classList.add('flex');
+                    setTimeout(() => {
+                        menu.classList.remove('opacity-0');
+                        menu.classList.add('opacity-100');
+                    }, 10);
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    menu.classList.remove('opacity-100');
+                    menu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        menu.classList.add('hidden');
+                        menu.classList.remove('flex');
+                    }, 300);
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
