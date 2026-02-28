@@ -169,7 +169,7 @@ ul {
 .hero {
     position: relative;
     background-color: var(--color-primary);
-    background-image: url('./assets/Acceuil-1.jpg');
+    background-image: url('./Acceuil-1.jpg');
     background-size: cover;
     background-position: center;
     padding: 120px 0;
